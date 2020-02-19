@@ -24,4 +24,8 @@ RSpec.describe Euler::Number::Two do
       expect(Euler::Number::Two.sum_even_fibs(data[:limit])).to eq(data[:sum])
     end
   end
+  
+  it "can calculate sum of the even-value elements of the Fibonacci sequence that do not exceed 4 million" do
+    expect(Euler::Number::Two.sum_even_fibs_smaller_than_4_mill).to eq(EVEN_FIBONACCIS_LE_4e06.sum)
+  end
 end

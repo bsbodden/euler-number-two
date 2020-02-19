@@ -24,6 +24,11 @@ module Euler
       
         sum 
       end
+      
+      # sum of the even-valued Fibonacci sequence whose values do not exceed four million
+      def self.sum_even_fibs_smaller_than_4_mill
+        sum_even_fibs(4e+06)
+      end
 
     end
   end
