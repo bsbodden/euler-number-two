@@ -4,7 +4,27 @@ module Euler
   module Number
     module Two
       class Error < StandardError; end
-      # Your code goes here...
+      
+      # non-recursive solution to find the sum of the even-value
+      # elements of the Fibonacci sequence that do not exceed a given limit
+      def self.sum_even_fibs(limit)
+        sum = 0
+        
+        # tuple initialized with the first two even elements of the sequence (including zero)
+        tuple = [0, 2]
+        
+        # update the sum with the next even Fibonacci element
+        # until it exceeds the passed limit, shortcircuit if limit 
+        # is less than 2
+        loop do
+          sum += tuple.last 
+          tuple = [ tuple.last,  4 * tuple.last + tuple.first ]
+          break if (tuple.last > limit) 
+        end if limit >= 2 
+      
+        sum 
+      end
+
     end
   end
 end
